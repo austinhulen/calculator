@@ -15,21 +15,23 @@ function divide (num1, num2) {
 }
 
 function operate (operator, a, b) {
+    let answer;
     switch (operator) {
         case '+': 
-            add(a, b);
+            answer = add(a, b);
             break;
         case '-': 
-            subtract(a, b);
+            answer = subtract(a, b);
             break;
         case '*':
-            multiply(a, b);
+            answer = multiply(a, b);
             break;
         case '/': 
-            divide(a,b);
+            answer = divide(a, b);
             break;
         default: 
-            'Error, command not recongnized.'
+            answer = 'Error, command not recongnized.'
             break;
     }
+    return answer; 
 }
