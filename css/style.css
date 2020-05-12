@@ -1,3 +1,21 @@
 #container {
     border-style: solid;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 20px; 
+    row-gap: 20px;
+}
+
+#display {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: right;
+}
+#clear {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
