@@ -1,6 +1,6 @@
 const displayOutput = document.querySelector('#display');
 const numberedButtons = document.querySelectorAll('.number.btn');
-let userInput1 = '';
+let displayStorage = '';
 function add (num1, num2) {
     return num1 + num2;
 }
@@ -40,8 +40,8 @@ function operate (operator, a, b) {
 }
 
 function addToDisplay (input) {
-    userInput1 += input; 
-    display.innerText = userInput1;
+    displayStorage += input; 
+    displayOutput.innerText = displayStorage;
 
 }
 
