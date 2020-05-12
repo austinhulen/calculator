@@ -1,3 +1,6 @@
+const displayOutput = document.querySelector('#display');
+const numberedButtons = document.querySelectorAll('.number.btn');
+let userInput1 = '';
 function add (num1, num2) {
     return num1 + num2;
 }
@@ -35,3 +38,15 @@ function operate (operator, a, b) {
     }
     return answer; 
 }
+
+function addToDisplay (input) {
+    userInput1 += input; 
+    display.innerText = userInput1;
+
+}
+
+numberedButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        addToDisplay(e.toElement.innerText);
+    });
+});
