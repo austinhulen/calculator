@@ -2,7 +2,16 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: grey; 
+    background-color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-decoration: underline;
 }
 #container {
     border-style: solid;
@@ -30,6 +39,7 @@ body {
     bottom: 0;
     right: 0;
     overflow: auto;
+    color: white; 
 }
 #clear {
     grid-column-start: 1;
@@ -56,4 +66,15 @@ button {
     border-radius: 50%;
     border-color: transparent;
     margin: 5px 5px 5px 5px;
+    font-size: 30px;
+    outline: none;
+}
+
+.btn.operator {
+    background-color: orange;
+    color: white;
+}
+#equals {
+    background-color: orange;
+    color: white;
 }
