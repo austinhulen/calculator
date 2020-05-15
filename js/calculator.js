@@ -123,6 +123,7 @@ document.addEventListener('keypress', function(e) {
     console.log(e.keyCode);
     switch (e.keyCode) {
         case 13: 
+            e.preventDefault();
             document.querySelector('#equals').click();
             break;
         case 42: 
@@ -171,6 +172,7 @@ document.addEventListener('keypress', function(e) {
             document.querySelector('#nine').click();
             break;
         case 61: 
+            e.preventDefault();
             document.querySelector('#equals').click();
             break;
     }
