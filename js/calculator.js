@@ -75,7 +75,10 @@ function checkForCurrentDecimal() {
 }
 
 function changeToExponetial(input) {
-    if(input > 999999999999) {
+    console.log(input);
+    let temp = input.toString().length; // convert the number to a string
+    console.log(temp);
+    if(temp > 12) { // if it is more than 12 characters then return in Exp form. 
         return input.toExponential(3);
     }
     else {
