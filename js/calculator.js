@@ -1,4 +1,4 @@
-const displayOutput = document.querySelector('#display');
+const displayOutput = document.querySelector('#displayTxt');
 const numberedButtons = document.querySelectorAll('.number.btn');
 const operatorButtons = document.querySelectorAll('.operator.btn');
 const equalButton = document.querySelector('#equals');
@@ -41,6 +41,7 @@ function operate (operator, a, b) {
             answer = 'Error, command not recongnized.'
             break;
     }
+    //answer.toExponetial(3);
     return answer; 
 }
 
@@ -71,6 +72,15 @@ function checkForCurrentDecimal() {
     return displayStorage.indexOf('.');
 }
 
+function changeToExponetial(input) {
+    if(input > 99) {
+        return input.toExponential(3);
+    }
+    else {
+        return input;
+    }
+}
+
 numberedButtons.forEach(btn => {
     btn.addEventListener('click', function(e) {
         //Checks to see if the user entered a decimal and checks to make sure a decimal hasn't been entered for the current input
@@ -98,7 +108,8 @@ equalButton.addEventListener('click', function() {
         if (isNaN(tempInput2)){  //Test if the user didn't enter another number before hitting equals
             tempInput2 = tempInput1; //If so then it will calculate the number they entered twice with the operator. EX. 5 + =  ---> 5 + 5 = 10
         }
-        displayStorage= operate(operator.shift(), tempInput1, tempInput2);
+        displayStorage = operate(operator.shift(), tempInput1, tempInput2);
+        displayStorage = changeToExponetial(displayStorage);
         displayOutput.innerText = displayStorage;
     }
 });

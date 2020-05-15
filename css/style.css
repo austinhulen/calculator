@@ -1,21 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: grey; 
+}
 #container {
     border-style: solid;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    column-gap: 20px; 
-    row-gap: 20px;
+    grid-template-columns: 90px 90px 90px 90px;
+    grid-template-rows: auto 90px 90px 90px 90px 90px;
+    column-gap: 10px; 
+    row-gap: 10px;
+    width: fit-content;
+    height: 600px;
+    margin: 0 auto;
 }
 
 #display {
     grid-column-start: 1;
     grid-column-end: 5;
     text-align: right;
+    position: relative;
+    margin: 10px;
+}
+
+#displayTxt {
+    font-size: 60px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
 }
 #clear {
     grid-column-start: 1;
     grid-column-end: 4;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 #zero {
     grid-column-start: 1;
     grid-column-end: 3;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn.number {
+    background-color: rgb(66, 65, 65);
+    color: white;
+}
+button {
+    border-radius: 50%;
+    border-color: transparent;
+    margin: 5px 5px 5px 5px;
 }
