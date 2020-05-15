@@ -41,8 +41,7 @@ function operate (operator, a, b) {
             answer = 'Error, command not recongnized.'
             break;
     }
-    //answer.toExponetial(3);
-    return answer; 
+    return changeToExponetial(answer); 
 }
 
 function addToDisplay (input) {
@@ -74,10 +73,21 @@ function checkForCurrentDecimal() {
     return displayStorage.indexOf('.');
 }
 
+function equalSignCheck() {
+    if(input.length == 1 && operator.length == 1){ // Doesn't let the user hit equal until they typed at least one number and an operator. 
+        input.push(displayStorage);
+        let tempInput1 = parseFloat(input.shift());
+        let tempInput2 = parseFloat(input.shift());
+        if (isNaN(tempInput2)){  //Test if the user didn't enter another number before hitting equals
+            tempInput2 = tempInput1; //If so then it will calculate the number they entered twice with the operator. EX. 5 + =  ---> 5 + 5 = 10
+        }
+        displayStorage = operate(operator.shift(), tempInput1, tempInput2);
+        displayOutput.innerText = displayStorage;
+    }
+}
+
 function changeToExponetial(input) {
-    console.log(input);
     let temp = input.toString().length; // convert the number to a string
-    console.log(temp);
     if(temp > 12) { // if it is more than 12 characters then return in Exp form. 
         return input.toExponential(3);
     }
@@ -105,19 +115,7 @@ operatorButtons.forEach(btn => {
     });
 });
 
-equalButton.addEventListener('click', function() {
-    if(input.length == 1 && operator.length == 1){ // Doesn't let the user hit equal until they typed at least one number and an operator. 
-        input.push(displayStorage);
-        let tempInput1 = parseFloat(input.shift());
-        let tempInput2 = parseFloat(input.shift());
-        if (isNaN(tempInput2)){  //Test if the user didn't enter another number before hitting equals
-            tempInput2 = tempInput1; //If so then it will calculate the number they entered twice with the operator. EX. 5 + =  ---> 5 + 5 = 10
-        }
-        displayStorage = operate(operator.shift(), tempInput1, tempInput2);
-        displayStorage = changeToExponetial(displayStorage);
-        displayOutput.innerText = displayStorage;
-    }
-});
+equalButton.addEventListener('click', () => equalSignCheck());
 
 clearButton.addEventListener('click', () => clearAll());
 
