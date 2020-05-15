@@ -46,7 +46,9 @@ function operate (operator, a, b) {
 }
 
 function addToDisplay (input) {
-    displayStorage += input; 
+    if (displayStorage.length < 12){ //doesn't allow more than 12 digits in the display.
+        displayStorage += input; 
+    }
     displayOutput.innerText = displayStorage;
 }
 
@@ -73,7 +75,7 @@ function checkForCurrentDecimal() {
 }
 
 function changeToExponetial(input) {
-    if(input > 99) {
+    if(input > 999999999999) {
         return input.toExponential(3);
     }
     else {
