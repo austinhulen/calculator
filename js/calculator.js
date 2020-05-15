@@ -119,4 +119,61 @@ equalButton.addEventListener('click', () => equalSignCheck());
 
 clearButton.addEventListener('click', () => clearAll());
 
+document.addEventListener('keypress', function(e) {
+    console.log(e.keyCode);
+    switch (e.keyCode) {
+        case 13: 
+            document.querySelector('#equals').click();
+            break;
+        case 42: 
+            document.querySelector('#multiply').click();
+            break;
+        case 43: 
+            document.querySelector('#plus').click();
+            break;
+        case 45: 
+            document.querySelector('#minus').click();
+            break;
+        case 46: 
+            document.querySelector('#period').click();
+            break;
+        case 47: 
+            document.querySelector('#divide').click();
+            break;
+        case 48: 
+            document.querySelector('#zero').click();
+            break;
+        case 49: 
+            document.querySelector('#one').click();
+            break;
+        case 50: 
+            document.querySelector('#two').click();
+            break;
+        case 51: 
+            document.querySelector('#three').click();
+            break;
+        case 52: 
+            document.querySelector('#four').click();
+            break;
+        case 53: 
+            document.querySelector('#five').click();
+            break;
+        case 54: 
+            document.querySelector('#six').click();
+            break;
+        case 55: 
+            document.querySelector('#seven').click();
+            break;
+        case 56: 
+            document.querySelector('#eight').click();
+            break;
+        case 57: 
+            document.querySelector('#nine').click();
+            break;
+        case 61: 
+            document.querySelector('#equals').click();
+            break;
+    }
+});
+
 
