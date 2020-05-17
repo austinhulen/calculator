@@ -48,6 +48,7 @@ h1 {
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    background-color: white;
 }
 #zero {
     grid-column-start: 1;
